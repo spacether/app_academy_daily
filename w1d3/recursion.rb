@@ -1,4 +1,4 @@
-#require 'byebug'
+require 'byebug'
 
 #warmup
 def range(start, end_num)
@@ -92,20 +92,30 @@ def perms(arr)
 end
 
 #binary search
+#always have target on left
+#use take and drop, drop has to use middle +1
+# base cases: return nil if empty, self index if value equals
+# when higher filter by if answer is nil
 def bsearch(arr, target)
-  return nil if target < arr.first
-  return nil unless arr.include?(target)
-
+  return nil if arr.empty?
   middle = arr.length/2
-  midval = arr[middle]
-  return middle if midval == target
-
-  if target < midval
-    bsearch(arr[0...middle], target)
-  else
-    middle + bsearch(arr[middle..-1], target)
+  compareval = target <=> arr[middle]
+  #debugger
+  case compareval
+  when 0
+    return middle
+  when -1
+    bsearch(arr.take(middle), target)
+  when 1
+    answer = bsearch(arr.drop(middle+1), target)
+    return (answer.nil? ? nil : middle + 1 + answer)
   end
 end
+puts "bsearch"
+arr = (0..11).to_a
+#p bsearch(arr, 4) == 4
+p bsearch(arr, -1).nil?
+p bsearch(arr, 12).nil?
 
 #merge sort
 def msort(arr)
