@@ -41,6 +41,14 @@ def lrt_stops
   # num = 4
   # company = lrt
   execute(<<-SQL)
+  SELECT
+  id, name
+  FROM
+  stops
+  JOIN
+  routes ON stops.id = routes.stop_id
+  WHERE
+  num = '4' AND company = 'LRT'
   SQL
 end
 
