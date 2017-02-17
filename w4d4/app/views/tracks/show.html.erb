@@ -1,0 +1,13 @@
+<label>Album Id: </label>
+<%= @track.album_id %>
+<label>Track Type: </label>
+<%= @track.track_type %>
+<label>Lyrics: </label>
+<%= @track.lyrics %>
+
+<h3>Links</h3>
+<%= link_to "Edit Track", edit_track_url(@track) %>
+<br>
+<%= link_to "Delete Track", track_url(@track), method: :delete %>
+<br>
+<%= link_to "All Albums", album_url(@track.album) %>

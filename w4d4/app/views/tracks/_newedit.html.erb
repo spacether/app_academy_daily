@@ -1,0 +1,19 @@
+<% action_url = track.persisted? ? track_url(track) : tracks_url %>
+<% val_method = track.persisted? ? :patch : :post %>
+<% val_submit = track.persisted? ? "Update" : "Create" %>
+
+<form action="<%= action_url %>" method="post">
+  <%= render 'shared/csrf' %>
+  <input type="hidden" name="_method" value="<%= val_method %>">
+  <label>Album Id: </label>
+  <select name="track[album_id]">
+  <% Album.where(band_id: track.album.band.id).each do |album| %>
+    <option value="<%= album.id %>"<%= "selected" if album.id == track.album_id  %>><%= album.id %></option>
+  <% end %>
+  </select>
+  <select name="track[track_type]">
+    <option value="regular"<%= "selected" if track.track_type == "regular" %>>regular</option>
+    <option value="bonus"<%= "selected" if track.track_type == "bonus"  %>>bonus</option>
+  </select>
+  <input type="submit" value="<%= val_submit %>">
+</form>

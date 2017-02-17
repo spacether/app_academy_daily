@@ -1,0 +1,10 @@
+<ol>
+<% @albums.each do |album| %>
+  <li>
+    <%= link_to "#{album.band.name} \##{album.id}", album_url(album) %>
+  </li>
+<% end %>
+</ol>
+
+<br>
+<%= link_to "Create New Album", new_album_url %>

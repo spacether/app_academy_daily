@@ -1,0 +1,14 @@
+<% action_url = band.persisted? ? band_url : bands_url %>
+<% val_method = band.persisted? ? :patch : :post %>
+<% val_submit = band.persisted? ? "Update" : "Create" %>
+
+<form action="<%= action_url %>" method="post">
+  <%= render 'shared/csrf' %>
+  <input type="hidden" name="_method" value="<%= val_method %>">
+  <label>Name: </label>
+  <input type="text" name="band[name]" value="<%= band.name %>">
+  <input type="submit" value="<%= val_submit %>">
+</form>
+
+<br>
+<%= link_to "Back to Bands", bands_url %>
