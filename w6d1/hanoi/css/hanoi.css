@@ -1,0 +1,76 @@
+html, body, figure, figcaption, ul, li, h1 {
+  text-align: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: sans-serif;
+}
+
+figcaption {
+  font-size: 40px;
+}
+
+body {
+  display: block;
+  text-align: center;
+}
+
+figure {
+  display: block;
+}
+
+ul {
+  margin: 10px;
+  border-bottom: 10px solid black;
+  padding-bottom: 5px;
+  width: 130px;
+  /*height: 100px;*/
+  list-style: none;
+  /*box-sizing: border-box;*/
+  display: inline-block;
+}
+
+li {
+  margin: 5px;
+  display: block;
+  width: 100px;
+  height: 40px;
+  /*box-sizing: border-box;*/
+  background-color: white;
+}
+
+ul:hover {
+  border-color: blue;
+  cursor: pointer;
+}
+
+li::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.selected {
+  border-color: red;
+}
+
+.small, .med, .large {
+  margin-right: auto;
+  margin-left: auto;
+  /*background-color: black;*/
+  background-image: url('./cat.jpg');
+  background-size: cover;
+}
+
+.small {
+  width: 30%;
+}
+
+.med {
+  width: 60%;
+}
+
+
+.large {
+  width: 90%;
+}
