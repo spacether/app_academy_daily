@@ -1,0 +1,25 @@
+.section {
+  border-bottom: 1px solid $light-gray;
+}
+
+.section ul {
+  // font-size: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.section li {
+  margin: 10px 10px;
+}
+
+.section li:last-of-type {
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+
+.section a:hover {
+	background-color: $lightest-gray;
+  text-decoration: none;
+}
