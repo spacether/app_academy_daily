@@ -5,8 +5,8 @@ class TodoDetailView extends React.Component{
     return (
       <div>
         <br/>
-        {this.props.body}
-        <button onClick={this.props.handleRemove}>
+        {this.props.todo.body}
+        <button onClick={this.props.removeTodo}>
           Delete ToDo
         </button>
 

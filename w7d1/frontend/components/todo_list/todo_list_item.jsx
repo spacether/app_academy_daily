@@ -4,6 +4,8 @@ import TodoContainer from './todo_detail_view_container';
 class TodoListItem extends React.Component{
   constructor(props){
     super(props);
+    console.log('making todo list item ');
+    console.log(props);
     this.state = {done: this.props.todo.done, detail: false};
     this.handleRemove = this.handleRemove.bind(this);
     this.handleDone = this.handleDone.bind(this);
@@ -27,6 +29,7 @@ class TodoListItem extends React.Component{
   }
 
   toggleDetail(e){
+    console.log('toggled on ',this.props.todo.id);
     e.preventDefault();
     this.setState({detail: !this.state.detail});
   }
@@ -35,11 +38,7 @@ class TodoListItem extends React.Component{
     let doneVal = (this.state.done) ? "In Process" : "Finished";
 
     let detail = "";
-    if (this.state.detail) {
-      detail = (<TodoContainer
-      body={this.props.todo.body}
-      handleRemove={this.handleRemove}/>);
-    }
+    if (this.state.detail) detail = (<TodoContainer todo={this.props.todo} />) ;
     // debugger;
 
     return (
