@@ -1,0 +1,9 @@
+form {
+  background-color: lightgrey;
+  border: 1px solid black;
+}
+
+li {
+  background-color: lightblue;
+  border: 1px solid blue;
+}
