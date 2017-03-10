@@ -1,0 +1,62 @@
+
+//POKEDEX
+//List Width
+.holder {
+  display: flex;
+  align-items: flex-start;
+  width: 100%
+}
+.pokedex{
+  width: 300px;
+}
+.pokedex li {
+  border-top: 1px solid black;
+}
+.pokedex span {
+	margin: 0px 8px;
+}
+
+// Image
+.poke {
+  width: 20px;
+  height: auto;
+}
+
+
+//POKE DETAIL
+
+.pokedetail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.container {
+  width: 66.6666%;
+  height: 430px;
+
+  background: orange;
+  border: 4px solid black;
+  border-radius: 10px;
+  display: table;
+
+}
+
+.container .image-container {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.pokedetail figure img {
+  height: 90%;
+}
+
+.item-container ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-container img {
+  width: 100px;
+}
